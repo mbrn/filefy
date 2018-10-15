@@ -1,12 +1,14 @@
 {
   "name": "filefy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A javascript library to produce downloadable files sucs as in CSV, PDF, XLSX, DOCX formats",
   "main": "./dist/index.js",
   "homepage": "https://github.com/mbrn/filefy#readme",
   "author": "Mehmet Baran",
   "license": "MIT",
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
