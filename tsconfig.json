@@ -7,7 +7,7 @@
     "esModuleInterop": true
   },
   "include": [
-    "index.tsx",
+    "index.ts",
     "src/**/*"
   ]
 }
