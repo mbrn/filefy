@@ -6,6 +6,7 @@
   "homepage": "https://github.com/mbrn/filefy#readme",
   "author": "Mehmet Baran",
   "license": "MIT",
+  "files": [ "dist" ],
   "scripts": {
     "build": "tsc"
   },
