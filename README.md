@@ -18,10 +18,10 @@ import { CsvBuilder } from 'filefy';
 
 var csvBuilder = new CsvBuilder("user_list.csv")
   .setColumns(["name", "surname"])
-  .addRow(["mehmet", "baran"])
+  .addRow(["Eve", "Holt"])
   .addRows([
-    ["gulcan", "baran"],
-    ["zerya betül", "baran"]
+    ["Charles", "Morris"],
+    ["Tracey", "Ramos"]
   ])
   .exportFile();
 ```
