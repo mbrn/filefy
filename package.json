@@ -1,6 +1,6 @@
 {
   "name": "filefy",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A javascript library to produce downloadable files sucs as in CSV, PDF, XLSX, DOCX formats",
   "main": "./dist/index.js",
   "homepage": "https://github.com/mbrn/filefy#readme",
