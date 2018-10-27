@@ -1,7 +1,7 @@
 # filefy
 [![Build Status](https://travis-ci.org/mbrn/filefy.svg?branch=master)](https://travis-ci.org/mbrn/filefy)
 [![npm package](https://img.shields.io/npm/v/filefy/latest.svg)](https://www.npmjs.com/package/filefy)
-[![NPM Downloads](https://img.shields.io/npm/dm/filefy.svg?style=flat)](https://npmcharts.com/compare/filefy?minimal=true)
+[![NPM Downloads](https://img.shields.io/npm/dt/filefy.svg?style=flat)](https://npmcharts.com/compare/filefy?minimal=true)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/baranmehmet.svg?label=follow+baranmehmet)](https://twitter.com/baranmehmet)
 
 
