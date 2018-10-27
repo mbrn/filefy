@@ -1,6 +1,7 @@
 export default class BaseBuilder {  
   protected exportFile(dataType: string, fileName: string, data: string) {
-    let content = `data:text/${dataType};charset=utf-8,%EF%BB%BF${data}`;    
+    var charBom = "\uFEFF";
+    let content = `data:text/${dataType};charset=utf-8,${charBom}${data}`;    
     var encodedUri = encodeURI(content);
 
     var link = document.createElement("a");
