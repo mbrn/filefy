@@ -33,7 +33,13 @@ export default class CsvBuilder extends BaseBuilder implements IFileExporter {
   }
 
   private escapeCell(cellData: string): string {
-    return '"' + (cellData ? cellData.replace('"', '""') : '') + '"';
+    if (!cellData) {
+      return '""';
+    }
+    if(cellData && cellData.replace) {
+      return '"' + (cellData.replace('"', '""')) + '"';
+    }
+    return '"'+cellData+'"';
   }
 
   private getRowData(row: string[]): string {
