@@ -1,14 +1,14 @@
-export default class BaseBuilder {  
+export default class BaseBuilder {
   protected exportFile(dataType: string, fileName: string, data: string) {
     var charBom = "\uFEFF";
-    let content = `data:text/${dataType};charset=utf-8,${charBom}${data}`;    
-    var encodedUri = encodeURI(content);
+    var encodedData = encodeURIComponent(data);
+    let content = `data:text/${dataType};charset=utf-8,${charBom}${encodedData}`;
 
     var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
+    link.setAttribute("href", content);
     link.setAttribute("download", fileName);
     document.body.appendChild(link);
 
-    link.click(); 
+    link.click();
   }
 }
