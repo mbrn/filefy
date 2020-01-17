@@ -43,8 +43,13 @@ export default class CsvBuilder extends BaseBuilder implements IFileExporter {
     return row.map(this.escapeCell).join(this._Delimeter);
   }
 
-  public exportFile(): void {
-    let dataArray:string[] = [];    
+  public exportFile({explicitDelimiter: boolean} = {explicitDelimiter: false}): void {
+    let dataArray:string[] = []; 
+    
+    if (explicitDelimiter) {
+      dataArray.push("sep=" + _Delimeter);
+    }
+    
     if(this._Columns && this._Columns.length > 0) {
       dataArray.push(this.getRowData(this._Columns));
     }
