@@ -6,10 +6,12 @@ export default class CsvBuilder extends BaseBuilder implements IFileExporter {
   private _Delimeter: string = ',';
   private _Columns: string[] = [];
   private _RowData: string[][] = [];
+  private _ExplicitDelimiter: boolean = false;
 
-  constructor(fileName: string) {
+  constructor(fileName: string, explicitDelimiter = false) {
     super();
     this._FileName = fileName;
+    this._ExplicitDelimiter = explicitDelimiter;
   }
 
   public setColumns(columns: string[]): CsvBuilder {
@@ -43,10 +45,10 @@ export default class CsvBuilder extends BaseBuilder implements IFileExporter {
     return row.map(this.escapeCell).join(this._Delimeter);
   }
 
-  public exportFile(explicitDelimiter = false): void {
+  public exportFile(): void {
     let dataArray:string[] = []; 
     
-    if (explicitDelimiter) {
+    if (this._ExplicitDelimiter) {
       dataArray.push("sep=" + this._Delimeter);
     }
     
