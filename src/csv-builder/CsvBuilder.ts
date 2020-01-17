@@ -47,7 +47,7 @@ export default class CsvBuilder extends BaseBuilder implements IFileExporter {
     let dataArray:string[] = []; 
     
     if (explicitDelimiter) {
-      dataArray.push("sep=" + _Delimeter);
+      dataArray.push("sep=" + this._Delimeter);
     }
     
     if(this._Columns && this._Columns.length > 0) {
