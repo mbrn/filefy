@@ -1,19 +1,25 @@
 export default class BaseBuilder {
   protected exportFile(dataType: string, fileName: string, data: string) {
+    const properties = {type: `text/${dataType}`};
+    let file = null;
+    try {
+      file = new File([data], fileName, properties);
+    } catch (e) {
+      file = new Blob([data], properties);
+    }
     if (window.navigator.msSaveOrOpenBlob) {
-      var blob = new Blob([data]);
-      window.navigator.msSaveOrOpenBlob(blob, fileName);
+      window.navigator.msSaveOrOpenBlob(file, fileName);
     } else {
-      var charBom = "\uFEFF";
-      var encodedData = encodeURIComponent(data);
-      let content = `data:text/${dataType};charset=utf-8,${charBom}${encodedData}`;
-
-      var link = document.createElement("a");
-      link.setAttribute("href", content);
-      link.setAttribute("download", fileName);
-      document.body.appendChild(link);
-
-      link.click();
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      const url = window.URL.createObjectURL(file);
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      setTimeout(() => {
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      }, 0);
     }
   }
 }
